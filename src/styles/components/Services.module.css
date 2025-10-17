@@ -1,30 +1,29 @@
 .services {
-  padding: 5rem 0;
+  padding: clamp(2rem, 5vw, 5rem) 0;
   background: var(--white);
   position: relative;
 }
 
 .services h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
   color: var(--primary-blue);
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 .serviceCard {
   position: relative;
-  max-width: 350px;
   background-color: #f2f8f9;
   border-radius: 12px;
-  padding: 32px 24px;
-  margin: 12px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  margin: clamp(0.5rem, 1vw, 0.75rem);
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
@@ -38,7 +37,7 @@
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: var(--primary-blue); /* Adjust color to match your theme, e.g., var(--primary-blue) */
+  background: var(--primary-blue);
   height: 32px;
   width: 32px;
   border-radius: 32px;
@@ -68,14 +67,14 @@
 
 .serviceImage {
   position: relative;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
-  margin: -32px -24px 0 -24px;
+  margin: clamp(-1.5rem, -2vw, -1rem) clamp(-1rem, -2vw, -0.75rem) 0;
 }
 
 .serviceImage::before {
@@ -94,13 +93,19 @@
   opacity: 1;
 }
 
+.serviceImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .serviceContent {
-  padding: 2rem 0 0;
+  padding: clamp(1rem, 2vw, 1.5rem) 0 0;
   background: transparent;
 }
 
 .serviceContent h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--foreground);
@@ -110,12 +115,14 @@
   color: #64748b;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .serviceButton {
+  display: inline-block;
   background: var(--primary-blue);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
   border: none;
   border-radius: 6px;
   font-weight: 600;
@@ -124,6 +131,7 @@
   position: relative;
   overflow: hidden;
   font-family: "Gilroy", sans-serif;
+  text-decoration: none;
 }
 
 .serviceButton::before {
@@ -150,5 +158,37 @@
 @media (max-width: 768px) {
   .servicesGrid {
     grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    margin: 0.5rem auto;
+    max-width: 500px;
+  }
+
+  .serviceCard::before {
+    transform: scale(1);
+  }
+
+  .serviceCard:hover::before {
+    transform: scale(25);
+  }
+}
+
+@media (max-width: 480px) {
+  .services h2 {
+    font-size: 1.5rem;
+  }
+
+  .serviceImage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .serviceContent {
+    padding: 1rem 0 0;
+  }
+
+  .serviceButton {
+    width: 100%;
+    text-align: center;
   }
 }

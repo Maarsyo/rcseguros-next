@@ -1,21 +1,21 @@
 .partners {
-  padding: 5rem 0;
+  padding: clamp(2rem, 5vw, 5rem) 0;
   background: var(--background);
   text-align: center;
   position: relative;
 }
 
 .partners h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
   color: var(--foreground);
 }
 
 .partnersGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
   align-items: center;
 }
 
@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -52,19 +52,41 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.partnerLogo img {
+.partnerLogo svg {
   max-width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
-}
-
-.partnerLogo:hover img {
-  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .partnersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .partnerLogo {
+    padding: 1rem;
+  }
+
+  .partnerLogo:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .partnerLogo:hover::before {
+    left: -100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners h2 {
+    font-size: 1.5rem;
+  }
+
+  .partnersGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+  }
+
+  .partnerLogo svg {
+    max-width: 80%;
   }
 }

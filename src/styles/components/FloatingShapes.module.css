@@ -24,9 +24,9 @@
   width: 0;
   height: 0;
   background: transparent;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 26px solid var(--primary-blue);
+  border-left: clamp(10px, 2vw, 12px) solid transparent;
+  border-right: clamp(10px, 2vw, 12px) solid transparent;
+  border-bottom: clamp(18px, 3vw, 20px) solid var(--primary-blue);
 }
 
 .shape.square {
@@ -46,7 +46,37 @@
     opacity: 0.1;
   }
   100% {
-    transform: translateY(-100px) rotate(360deg);
+    transform: translateY(-50px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .shape {
+    animation-duration: 12s;
+  }
+
+  .shape:nth-child(n+7) {
+    display: none;
+  }
+
+  .shape.circle {
+    width: clamp(12px, 3vw, 15px) !important;
+    height: clamp(12px, 3vw, 15px) !important;
+  }
+
+  .shape.square {
+    width: clamp(10px, 2.5vw, 12px) !important;
+    height: clamp(10px, 2.5vw, 12px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .shape {
+    animation-duration: 10s;
+  }
+
+  .shape:nth-child(n+5) {
+    display: none;
   }
 }

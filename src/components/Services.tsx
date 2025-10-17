@@ -1,4 +1,4 @@
-'use client';
+"use client"
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -106,7 +106,7 @@ export default function Services() {
             <div className={styles.serviceContent}>
               <h3>Seguro Auto</h3>
               <p>Escolha coberturas que fazem sentido para você e proteja seu veículo de diversas situações.</p>
-              <button className={styles.serviceButton}>Cotar gratuitamente</button>
+              <a href="/seguros-auto" className={styles.serviceButton}>Cotar gratuitamente</a>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export default function Services() {
             <div className={styles.serviceContent}>
               <h3>Seguro Residencial</h3>
               <p>Proteger sua casa é mais barato do que você imagina. Fique livre de imprevistos e pequenos reparos.</p>
-              <button className={styles.serviceButton}>Cotar gratuitamente</button>
+              <a href="/seguros-residencial" className={styles.serviceButton}>Cotar gratuitamente</a>
             </div>
           </div>
 
@@ -128,7 +128,7 @@ export default function Services() {
             <div className={styles.serviceContent}>
               <h3>Seguro Viagem</h3>
               <p>Viaje com a tranquilidade de estar segurado(a) em qualquer lugar, com proteção a imprevistos e acidentes.</p>
-              <button className={styles.serviceButton}>Cotar gratuitamente</button>
+              <a href="/seguros-viagem" className={styles.serviceButton}>Cotar gratuitamente</a>
             </div>
           </div>
         </div>
