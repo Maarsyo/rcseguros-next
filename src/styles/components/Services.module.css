@@ -1,0 +1,154 @@
+.services {
+  padding: 5rem 0;
+  background: var(--white);
+  position: relative;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--primary-blue);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  position: relative;
+  max-width: 350px;
+  background-color: #f2f8f9;
+  border-radius: 12px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: var(--primary-blue); /* Adjust color to match your theme, e.g., var(--primary-blue) */
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.5s ease-out;
+}
+
+.serviceCard:hover::before {
+  transform: scale(41);
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.serviceCard:hover .serviceContent h3 {
+  color: #ffffff;
+  transition: color 0.3s ease-out;
+}
+
+.serviceCard:hover .serviceContent p {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease-out;
+}
+
+.serviceImage {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  margin: -32px -24px 0 -24px;
+}
+
+.serviceImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(10, 97, 184, 0.1), rgba(10, 97, 184, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.serviceCard:hover .serviceImage::before {
+  opacity: 1;
+}
+
+.serviceContent {
+  padding: 2rem 0 0;
+  background: transparent;
+}
+
+.serviceContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.serviceContent p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.serviceButton {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: "Gilroy", sans-serif;
+}
+
+.serviceButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.serviceButton:hover::before {
+  left: 100%;
+}
+
+.serviceButton:hover {
+  background: #0851a0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 97, 184, 0.3);
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}

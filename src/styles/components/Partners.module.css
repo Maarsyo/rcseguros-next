@@ -1,0 +1,70 @@
+.partners {
+  padding: 5rem 0;
+  background: var(--background);
+  text-align: center;
+  position: relative;
+}
+
+.partners h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--foreground);
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.partnerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.partnerLogo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(10, 97, 184, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.partnerLogo:hover::before {
+  left: 100%;
+}
+
+.partnerLogo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.partnerLogo img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.partnerLogo:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .partnersGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
