@@ -55,14 +55,19 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.serviceCard:hover .serviceButton{
+  background: var(--white);
+  color: var(--primary-blue);
+}
+
 .serviceCard:hover .serviceContent h3 {
   color: #ffffff;
-  transition: color 0.3s ease-out;
+  transition: color 0.2s ease-out;
 }
 
 .serviceCard:hover .serviceContent p {
   color: rgba(255, 255, 255, 0.8);
-  transition: color 0.3s ease-out;
+  transition: color 0.2s ease-out;
 }
 
 .serviceImage {
@@ -169,9 +174,9 @@
     transform: scale(1);
   }
 
-  .serviceCard:hover::before {
+  /* .serviceCard:hover::before {
     transform: scale(25);
-  }
+  } */
 }
 
 @media (max-width: 480px) {
