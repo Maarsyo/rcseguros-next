@@ -1,0 +1,154 @@
+/* CotacaoAuto.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #f9fafb; /* Fundo off-white da landing */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Tipografia da landing */
+}
+
+.main {
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 1.875rem; /* H1 da landing: text-3xl */
+  font-weight: 700; /* Bold */
+  line-height: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827; /* Texto escuro */
+}
+
+.card {
+  max-width: 28rem; /* Centralizado, como na landing */
+  margin: 0 auto;
+  background-color: #ffffff; /* Branco */
+  padding: 2rem; /* Padding generoso para "premium" */
+  border-radius: 0.5rem; /* Rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra sutil da landing */
+}
+
+.stepTitle {
+  font-size: 1.5rem; /* H2 da landing: text-2xl */
+  font-weight: 700; /* Bold */
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.input {
+  width: 100%;
+  height: 48px; /* Altura confortável, premium */
+  padding: 0.75rem 1rem; /* Padding generoso */
+  border: 1px solid #d1d5db; /* Borda suave */
+  border-radius: 0.5rem; /* Rounded */
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s; /* Transição suave */
+  margin-bottom: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb; /* Cor primary no foco */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); /* Ring azul sutil */
+}
+
+.input:disabled {
+  background-color: #f3f4f6; /* Fundo cinza claro */
+  cursor: not-allowed;
+}
+
+.select {
+  width: 100%;
+  height: 48px; /* Altura igual aos inputs */
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 1rem;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem; /* P da landing */
+  color: #374151; /* Texto secundário */
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+  accent-color: #2563eb; /* Cor primary para checkbox */
+}
+
+.error {
+  color: #dc2626; /* Vermelho elegante */
+  font-size: 0.875rem; /* Pequeno */
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.buttonSecondary {
+  background-color: transparent; /* Ghost button */
+  color: #374151;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.buttonSecondary:hover {
+  background-color: #f3f4f6; /* Fundo cinza claro no hover */
+  border-color: #9ca3af;
+}
+
+.buttonPrimary {
+  background-color: #2563eb; /* Primary da landing */
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.buttonPrimary:hover {
+  background-color: #1d4ed8; /* Hover da landing */
+}
+
+.buttonPrimary:active {
+  background-color: #1e40af; /* Active leve */
+}
+
+.buttonPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.center {
+  text-align: center;
+}
