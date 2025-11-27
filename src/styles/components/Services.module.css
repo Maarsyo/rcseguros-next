@@ -173,10 +173,6 @@
   .serviceCard::before {
     transform: scale(1);
   }
-
-  /* .serviceCard:hover::before {
-    transform: scale(25);
-  } */
 }
 
 @media (max-width: 480px) {
